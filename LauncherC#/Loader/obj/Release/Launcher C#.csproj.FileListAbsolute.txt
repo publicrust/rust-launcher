@@ -1,0 +1,143 @@
+D:\unity\Loader\Loader\bin\Release\Launcher C#.exe.config
+D:\unity\Loader\Loader\bin\Release\Launcher C#.exe
+D:\unity\Loader\Loader\bin\Release\Launcher C#.pdb
+D:\unity\Loader\Loader\bin\Release\DiscordRPC.xml
+D:\unity\Loader\Loader\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\unity\Loader\Loader\bin\Release\Newtonsoft.Json.xml
+D:\unity\Loader\Loader\bin\Release\System.Buffers.xml
+D:\unity\Loader\Loader\bin\Release\System.Memory.xml
+D:\unity\Loader\Loader\bin\Release\System.Numerics.Vectors.xml
+D:\unity\Loader\Loader\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\unity\Loader\Loader\bin\Release\System.Text.Encoding.CodePages.xml
+D:\unity\Loader\Loader\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\unity\Loader\Loader\obj\Release\Launcher C#.csproj.AssemblyReference.cache
+D:\unity\Loader\Loader\obj\Release\Launcher C#.csproj.SuggestedBindingRedirects.cache
+D:\unity\Loader\Loader\obj\Release\Launcher C#.exe.config
+D:\unity\Loader\Loader\obj\Release\MainTab.baml
+D:\unity\Loader\Loader\obj\Release\MainWindow.baml
+D:\unity\Loader\Loader\obj\Release\MainTab.g.cs
+D:\unity\Loader\Loader\obj\Release\MainWindow.g.cs
+D:\unity\Loader\Loader\obj\Release\App.g.cs
+D:\unity\Loader\Loader\obj\Release\Launcher C#_MarkupCompile.cache
+D:\unity\Loader\Loader\obj\Release\Launcher C#_MarkupCompile.lref
+D:\unity\Loader\Loader\obj\Release\App.baml
+D:\unity\Loader\Loader\obj\Release\Launcher C#.g.resources
+D:\unity\Loader\Loader\obj\Release\Launcher C#.csproj.GenerateResource.cache
+D:\unity\Loader\Loader\obj\Release\Launcher C#.csproj.CoreCompileInputs.cache
+D:\unity\Loader\Loader\obj\Release\Launcher.1EC409B7.Up2Date
+D:\unity\Loader\Loader\obj\Release\Launcher C#.exe
+D:\unity\Loader\Loader\obj\Release\Launcher C#.pdb
+D:\unity\Loader\Loader\obj\Release\Loader.Properties.Resources.resources
+D:\unity\Loader\Loader\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\unity\Loader\Loader\bin\Release\Microsoft.Win32.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\netstandard.dll
+D:\unity\Loader\Loader\bin\Release\System.AppContext.dll
+D:\unity\Loader\Loader\bin\Release\System.Collections.Concurrent.dll
+D:\unity\Loader\Loader\bin\Release\System.Collections.dll
+D:\unity\Loader\Loader\bin\Release\System.Collections.NonGeneric.dll
+D:\unity\Loader\Loader\bin\Release\System.Collections.Specialized.dll
+D:\unity\Loader\Loader\bin\Release\System.ComponentModel.dll
+D:\unity\Loader\Loader\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\unity\Loader\Loader\bin\Release\System.ComponentModel.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\unity\Loader\Loader\bin\Release\System.Console.dll
+D:\unity\Loader\Loader\bin\Release\System.Data.Common.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.Contracts.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.Debug.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.Process.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.StackTrace.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.Tools.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.TraceSource.dll
+D:\unity\Loader\Loader\bin\Release\System.Diagnostics.Tracing.dll
+D:\unity\Loader\Loader\bin\Release\System.Drawing.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.Dynamic.Runtime.dll
+D:\unity\Loader\Loader\bin\Release\System.Globalization.Calendars.dll
+D:\unity\Loader\Loader\bin\Release\System.Globalization.dll
+D:\unity\Loader\Loader\bin\Release\System.Globalization.Extensions.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.Compression.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.Compression.ZipFile.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.FileSystem.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.IsolatedStorage.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.Pipes.dll
+D:\unity\Loader\Loader\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\unity\Loader\Loader\bin\Release\System.Linq.dll
+D:\unity\Loader\Loader\bin\Release\System.Linq.Expressions.dll
+D:\unity\Loader\Loader\bin\Release\System.Linq.Parallel.dll
+D:\unity\Loader\Loader\bin\Release\System.Linq.Queryable.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Http.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.NameResolution.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.NetworkInformation.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Ping.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Requests.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Security.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.Sockets.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.WebHeaderCollection.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.WebSockets.Client.dll
+D:\unity\Loader\Loader\bin\Release\System.Net.WebSockets.dll
+D:\unity\Loader\Loader\bin\Release\System.ObjectModel.dll
+D:\unity\Loader\Loader\bin\Release\System.Reflection.dll
+D:\unity\Loader\Loader\bin\Release\System.Reflection.Extensions.dll
+D:\unity\Loader\Loader\bin\Release\System.Reflection.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.Resources.Reader.dll
+D:\unity\Loader\Loader\bin\Release\System.Resources.ResourceManager.dll
+D:\unity\Loader\Loader\bin\Release\System.Resources.Writer.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Extensions.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Handles.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.InteropServices.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Numerics.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Serialization.Json.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Claims.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Cryptography.Csp.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.Principal.dll
+D:\unity\Loader\Loader\bin\Release\System.Security.SecureString.dll
+D:\unity\Loader\Loader\bin\Release\System.Text.Encoding.dll
+D:\unity\Loader\Loader\bin\Release\System.Text.Encoding.Extensions.dll
+D:\unity\Loader\Loader\bin\Release\System.Text.RegularExpressions.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Overlapped.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Tasks.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Thread.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.ThreadPool.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Timer.dll
+D:\unity\Loader\Loader\bin\Release\System.ValueTuple.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.ReaderWriter.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.XDocument.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.XmlDocument.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.XmlSerializer.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.XPath.dll
+D:\unity\Loader\Loader\bin\Release\System.Xml.XPath.XDocument.dll
+D:\unity\Loader\Loader\bin\Release\Costura.dll
+D:\unity\Loader\Loader\bin\Release\DiscordRPC.dll
+D:\unity\Loader\Loader\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\unity\Loader\Loader\bin\Release\Newtonsoft.Json.dll
+D:\unity\Loader\Loader\bin\Release\SharpCompress.dll
+D:\unity\Loader\Loader\bin\Release\System.Buffers.dll
+D:\unity\Loader\Loader\bin\Release\System.Memory.dll
+D:\unity\Loader\Loader\bin\Release\System.Numerics.Vectors.dll
+D:\unity\Loader\Loader\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\unity\Loader\Loader\bin\Release\System.Shim.dll
+D:\unity\Loader\Loader\bin\Release\System.Text.Encoding.CodePages.dll
+D:\unity\Loader\Loader\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\unity\Loader\Loader\bin\Release\ZstdSharp.dll
+D:\unity\Loader\Loader\bin\Release\Costura.pdb
+D:\unity\Loader\Loader\bin\Release\Costura.xml
+D:\unity\Loader\Loader\bin\Release\DiscordRPC.pdb
+D:\unity\Loader\Loader\bin\Release\SharpCompress.pdb

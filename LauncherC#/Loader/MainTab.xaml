@@ -1,0 +1,22 @@
+﻿<Window x:Class="Loader.MainTab"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title=" Rust Launcher" Height="200" Width="400" WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        
+        <TextBlock FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.511,0.501" FontFamily="Arial Black" Margin="0,44,0,0">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="White" BlurRadius="15" ShadowDepth="0" Opacity="0.8"/>
+            </TextBlock.Effect><Run Foreground="#FFE53935" Text="R"/><Run Foreground="White" Text="ust"/><Run Foreground="White" Text="Launcher"/></TextBlock>
+
+        
+        <ProgressBar x:Name="LoadingBar" Height="20" Width="300" 
+                     HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Foreground="#FF0EEC2F" Background="#FF2A2A2A" BorderBrush="#FF0AE00D" BorderThickness="1"/>
+
+        
+        <TextBlock x:Name="LoadingPercent" Text="0%" Foreground="White" FontSize="14" FontWeight="Bold" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,115,0,0" RenderTransformOrigin="0.748,-2.545"/>
+    </Grid>
+</Window>

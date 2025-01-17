@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
@@ -13,6 +13,7 @@ using Loader;
 using System.Windows.Input;
 using System.Windows.Forms;
 using Button = DiscordRPC.Button;
+using Loader.Properties;
 
 
 
@@ -26,34 +27,64 @@ namespace Loader
         private static DiscordRpcClient discordClient;
         private static readonly HttpClient client = new HttpClient();
         private string gameFolderPath;
+        private string downloadFolderPath;
 
+        private const string SettingsFileName = "settings.json";
         public MainWindow()
         {
             InitializeComponent();
-            SelectGameFolder();
+            LoadSettings();
+            SelectGameFolderIfNeeded();
             InitializeDiscordRPC();
             FetchServerData();
             CheckForUpdatesAsync();
         }
 
-        private void SelectGameFolder()
+        private void LoadSettings()
         {
-            using (var folderDialog = new FolderBrowserDialog())
+            if (File.Exists("settings.json"))
             {
-                folderDialog.Description = "Select the folder containing the game.";
-                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    gameFolderPath = folderDialog.SelectedPath;
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("Game folder selection is required to proceed.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    System.Windows.Application.Current.Shutdown();
-                }
+                var settings = JsonConvert.DeserializeObject<Settings>(File.ReadAllText("settings.json"));
+                gameFolderPath = settings.GameFolderPath;
+                downloadFolderPath = settings.DownloadFolderPath;
+            }
+            else
+            {
+                downloadFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GameUpdates");
             }
         }
 
-
+        private void SaveSettings()
+        {
+            var settings = new Settings
+            {
+                GameFolderPath = gameFolderPath,
+                DownloadFolderPath = downloadFolderPath
+            };
+            File.WriteAllText("settings.json", JsonConvert.SerializeObject(settings, Formatting.Indented));
+        }
+        
+        private void SelectGameFolderIfNeeded()
+        {
+            if (string.IsNullOrEmpty(gameFolderPath) || !Directory.Exists(gameFolderPath))
+            {
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    folderDialog.Description = "Select the folder containing the game.";
+                    if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        gameFolderPath = folderDialog.SelectedPath;
+                        downloadFolderPath= folderDialog.SelectedPath;
+                        SaveSettings();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Game folder selection is required to proceed.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        System.Windows.Application.Current.Shutdown();
+                    }
+                }
+            }
+        }
 
         private void DragWin(object sender, MouseButtonEventArgs e)
         {
@@ -86,15 +117,21 @@ namespace Loader
             }
             catch
             {
-                System.Windows.MessageBox.Show("Failed To download update.", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Failed To open link.", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private async void CheckForUpdatesAsync()
         {
-            UpdateStatus2.Text = "Checking For Updates";
-            await Updater.CheckAndUpdate(this, gameFolderPath);
+            try
+            {
+                UpdateStatus2.Text = "Checking for updates...";
+                await Updater.CheckAndUpdate(this, gameFolderPath, downloadFolderPath);
+            }
+            catch (Exception ex)
+            {
+                UpdateStatus2.Text = $"Update failed: {ex.Message}";
+            }
         }
-
 
         public void UpdateProgress(int progress)
         {
@@ -103,7 +140,6 @@ namespace Loader
                 UpdateBar.Value = progress;
             });
         }
-
 
         public void UpdateStatus(string message)
         {
@@ -150,7 +186,11 @@ namespace Loader
             public int maxplayers { get; set; }
         }
 
-
+        public class Settings
+        {
+            public string GameFolderPath { get; set; }
+            public string DownloadFolderPath { get; set; }
+        }
 
         private static void InitializeDiscordRPC()
         {
@@ -234,10 +274,6 @@ namespace Loader
             }
 
         }
-
-
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

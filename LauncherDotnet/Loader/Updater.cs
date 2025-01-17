@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -14,50 +14,84 @@ namespace Loader
     {
         private static readonly HttpClient client = new HttpClient();
 
-        public static async Task CheckAndUpdate(MainWindow mainWindow, string extractFolderPath)
+        public static async Task CheckAndUpdate(MainWindow mainWindow, string gameFolderPath, string downloadFolderPath)
         {
             try
             {
-                string localVersion = ReadLocalVersion();
-                string versionUrl = "https://raw.githubusercontent.com/smanty222/version.json/refs/heads/main/version.json";
+                string localVersion = ReadLocalVersion(gameFolderPath);
+                string versionUrl = "https://example.com/version.json"; //use github if u dont have cloud server or S3
                 string response = await client.GetStringAsync(versionUrl);
                 var versionInfo = JsonConvert.DeserializeObject<VersionInfo>(response);
 
                 if (localVersion != versionInfo.version)
                 {
-                    mainWindow.UpdateStatus("Starting Updating");
+                    mainWindow.UpdateStatus("Starting update...");
 
                     foreach (var file in versionInfo.files)
                     {
-                        await DownloadFile(file.url, file.path, mainWindow, extractFolderPath);
+                        string destinationPath = Path.Combine(downloadFolderPath, file.path);
+                        await DownloadFile(file.url, destinationPath, mainWindow, gameFolderPath);
                     }
 
-                    UpdateLocalVersion(versionInfo.version);
-                    mainWindow.UpdateBar.Value = 100;
+                    UpdateLocalVersion(gameFolderPath, versionInfo.version);
+                    mainWindow.UpdateProgress(100);
                     mainWindow.UpdateStatus("Updated!");
                 }
                 else
                 {
-                    mainWindow.UpdateBar.Value = 100;
+                    mainWindow.UpdateProgress(100);
                     mainWindow.UpdateStatus("Up to date.");
                 }
             }
             catch (Exception ex)
             {
-                mainWindow.UpdateStatus($"Failed to update : {ex.Message}");
+                mainWindow.UpdateStatus($"Failed to update: {ex.Message}");
             }
         }
 
-        private static string ReadLocalVersion()
+        private static string ReadLocalVersion(string gameFolderPath)
         {
-            string versionFilePath = "version.txt";
-
+            string versionFilePath = Path.Combine(gameFolderPath, "version.txt");
             if (!File.Exists(versionFilePath))
             {
-                File.WriteAllText(versionFilePath, "1.0.0");
+                File.WriteAllText(versionFilePath, "1.0.0"); //in future will be used another method to check for update
             }
-
             return File.ReadAllText(versionFilePath).Trim();
+        }
+
+        private static void UpdateLocalVersion(string gameFolderPath, string newVersion)
+        {
+            string versionFilePath = Path.Combine(gameFolderPath, "version.txt");
+            File.WriteAllText(versionFilePath, newVersion);
+        }
+
+        private static async Task DownloadFile(string fileUrl, string destinationPath, MainWindow mainWindow, string extractFolderPath)
+        {
+            try
+            {
+                mainWindow.UpdateStatus($"Downloading: {fileUrl}");
+                byte[] data = await client.GetByteArrayAsync(fileUrl);
+                Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
+
+                using (var fileStream = new FileStream(destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))
+                {
+                    await fileStream.WriteAsync(data, 0, data.Length);
+                }
+
+                string extension = Path.GetExtension(destinationPath).ToLowerInvariant();
+                if (extension == ".zip")
+                {
+                    ExtractZipFile(destinationPath, extractFolderPath);
+                }
+                else if (extension == ".rar")
+                {
+                    ExtractRarFile(destinationPath, extractFolderPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                mainWindow.UpdateStatus($"Error downloading: {ex.Message}");
+            }
         }
 
         private static void ExtractZipFile(string zipPath, string extractPath)
@@ -79,51 +113,13 @@ namespace Loader
                 {
                     string filePath = Path.Combine(extractPath, entry.Key);
                     Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-                    entry.WriteToFile(filePath, new ExtractionOptions() { Overwrite = true });
+                    entry.WriteToFile(filePath, new ExtractionOptions { Overwrite = true });
                 }
             }
-
             File.Delete(rarPath);
         }
-
-        private static void UpdateLocalVersion(string newVersion)
-        {
-            string versionFilePath = "version.txt";
-            File.WriteAllText(versionFilePath, newVersion);
-        }
-
-        private static async Task DownloadFile(string fileUrl, string destinationPath, MainWindow mainWindow, string extractFolderPath)
-        {
-            try
-            {
-                mainWindow.UpdateStatus($"Downloading: {fileUrl}");
-
-                byte[] data = await client.GetByteArrayAsync(fileUrl);
-
-                Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
-
-                using (var fileStream = new FileStream(destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))
-                {
-                    await fileStream.WriteAsync(data, 0, data.Length);
-                }
-
-                string extension = Path.GetExtension(destinationPath).ToLowerInvariant();
-                if (extension == ".zip")
-                {
-                    ExtractZipFile(destinationPath, extractFolderPath);
-                }
-                else if (extension == ".rar")
-                {
-                    ExtractRarFile(destinationPath, extractFolderPath);
-                }
-            }
-            catch (Exception ex)
-            {
-                mainWindow.UpdateStatus($"Error Updating: {ex.Message}");
-            }
-        }
     }
-
+    
     public class VersionInfo
     {
         public string version { get; set; }

@@ -24,7 +24,7 @@
   <h3 align="center">Rust Launcher Templates</h3>
 
   <p align="center">
-    Примеры лаунчеров на разных языках 
+    Launcher templates for Rust
     <br />
     <a href="https://github.com/publicrust/rust-launcher"><strong>Explore the docs »</strong></a>
     <br />

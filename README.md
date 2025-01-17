@@ -123,7 +123,7 @@ Owner - [@waymall](https://steamcommunity.com/id/waymall/) - https://discord.gg/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [Next.js]: https://img.shields.io/badge/C++-000000?style=for-the-badge&logo=cplusplus&logoColor=white
-[Next-url]: https://nextjs.org/
+[Next-url]: https://github.com/topics/cpp
 [React.js]: https://img.shields.io/badge/Net-20232A?style=for-the-badge&logo=dotnet&logoColor=61DAFB
 [React-url]: https://dotnet.microsoft.com/ru-ru/
 [Vue.js]: https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white

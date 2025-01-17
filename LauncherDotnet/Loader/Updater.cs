@@ -19,7 +19,7 @@ namespace Loader
             try
             {
                 string localVersion = ReadLocalVersion(gameFolderPath);
-                string versionUrl = "https://example.com/version.json"; //use github if u dont have cloud server or S3
+                string versionUrl = "https://raw.githubusercontent.com/publicrust/rust-launcher/refs/heads/main/dotnet/version.json"; //use github if u dont have cloud server or S3
                 string response = await client.GetStringAsync(versionUrl);
                 var versionInfo = JsonConvert.DeserializeObject<VersionInfo>(response);
 

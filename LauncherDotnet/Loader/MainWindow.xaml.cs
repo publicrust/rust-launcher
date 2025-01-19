@@ -154,7 +154,7 @@ namespace Loader
             try
             {
                 //using gamemonitoring api for online
-                string apiUrl = "https://api.gamemonitoring.ru/servers/serverid";
+                string apiUrl = "https://api.gamemonitoring.ru/servers/6907955";
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -195,12 +195,12 @@ namespace Loader
         private static void InitializeDiscordRPC()
         {
 
-            discordClient = new DiscordRpcClient("ClientID");
+            discordClient = new DiscordRpcClient("1330611711342022656");
             discordClient.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
 
 
             discordClient.Initialize();
-            UpdateDiscordPresence("Loading Launcher", "Starting Rust");
+            UpdateDiscordPresence("Loading Launcher", "Starting RustLauncher");
         }
 
         private static void UpdateDiscordPresence(string state, string details)
@@ -214,10 +214,10 @@ namespace Loader
 
                 Assets = new Assets()
                 {
-                    LargeImageKey = "png",
-                    LargeImageText = "text",
-                    SmallImageKey = "png",
-                    SmallImageText = "text"
+                    LargeImageKey = "da0c3719c4c891420174d51262747066",
+                    LargeImageText = "Test",
+                    SmallImageKey = "da0c3719c4c891420174d51262747066",
+                    SmallImageText = "Test"
 
                 }
             });
